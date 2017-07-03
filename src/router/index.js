@@ -1,17 +1,16 @@
 import Vue from 'vue'
-import router from 'vue-router'
+import VueRouter from 'vue-router'
 import Index from '@/components/index'
 import EditDetail from '@/components/editDetail/editDetail'
-// import Second from '@/components/second/second'
 
-Vue.use(router)
+Vue.use(VueRouter)
 
-export default new router({
+export default new VueRouter({
   routes: [
     {
       path: '/',
       name: 'index',
-      component: Index ,
+      component: Index
     },
     {
       path: '/edit',
@@ -20,4 +19,3 @@ export default new router({
     }
   ]
 })
-

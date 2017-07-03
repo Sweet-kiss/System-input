@@ -1,6 +1,6 @@
 <template>
    <div class="index_w">
-      <div class="top_add"><img src="../assets/images/add.png" alt="" @click="tiaozhuan(set.path)"></div>
+      <div class="top_add"><img src="../assets/images/add.png" alt="" @click="edit()"></div>
    
     
    <div v-for="information in informations" class="weui_cells weui_cells_access weui_add">
@@ -70,8 +70,8 @@ export default {
     }
   },
   methods: {
-    tiaozhuan (path) {
-      this.$router.push({ path: path })
+    edit () {
+      this.$router.push({ path: '/edit' })
     }
   }
 }

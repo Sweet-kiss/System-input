@@ -1,11 +1,26 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import VRouter from 'vue-router'
+import Index from '@/components/index'
+import EditDetail from '@/components/editDetail/editDetail'
 import '@/assets/common/reset.css'
 
-Vue.config.productionTip = false
+Vue.use(VRouter)
+
+let router = new VRouter({
+  routes: [
+    {
+    path: '/',
+    component: Index,
+    redirect: '/index',
+    },
+    {
+      path: '/edit',
+      name: 'editDetail',
+      component: EditDetail
+    }
+  ]
+})
 
 /* eslint-disable no-new */
 new Vue({

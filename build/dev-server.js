@@ -30,7 +30,7 @@ var appData = require('../data.json')
 var informations = appData.informations
 
 var apiRoutes = express.Router()
-apiRoutes.get('/api/informations', function (req,res){
+apiRoutes.get('/informations', function (req,res){
    res.json({
      erron:0,
      data: informations

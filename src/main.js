@@ -5,6 +5,9 @@ import VueResource from 'vue-resource'
 import '@/assets/common/reset.css'
 
 Vue.use(VueResource)
+
+Vue.config.productionTip = false
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

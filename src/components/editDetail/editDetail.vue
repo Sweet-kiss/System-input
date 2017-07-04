@@ -147,7 +147,15 @@
 </template>
 
 <script>
+export default {
+  created () {
+    this.$http.get('/api/informations').then((response) => {
+      console.log(JSON.stringify(response))
+    });
+  }
+}
 </script>
+
 <style>
 .top_w {
 	position: relative;

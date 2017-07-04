@@ -1,0 +1,99 @@
+{
+  "informations": [
+    {
+      "Key":"Mountain",
+      "Employee_code": "员工编码：7566775556",
+      "Chinese_name": "张高山",
+      "English_name": "英文名：Mountain",
+      "path": "/Mountain"
+    },
+    {
+      "Key":"water",
+      "Employee_code": "员工编码：82624623525",
+      "Chinese_name": "张流水",
+      "English_name": "英文名：water",
+      "path": "/water"
+    },
+    {
+      "Key":"cuisan",
+      "Employee_code": "员工编码：55677888442",
+      "Chinese_name": "张翠山",
+      "English_name": "英文名：cuisan",
+      "path": "/cuisan"
+    },
+    {
+      "Key":"wuji",
+      "Employee_code": "员工编码：7566775556",
+      "Chinese_name": "张无忌",
+      "English_name": "英文名：wuji",
+      "path": "/wuji"
+    },
+    {
+      "Key":"tianai",
+      "Employee_code": "员工编码：7566775556",
+      "Chinese_name": "张天爱",
+      "English_name": "英文名：tianai",
+      "path": "/tianai"
+    }
+  ],
+  "Mountain": [
+     {
+      "language":"英语",
+      "place": "上海，北京，重庆",
+      "potential": "一级",
+      "Achievements": "良好",
+      "Strengths": "果断，效率高，组织能力",
+      "Development": "设计,产品,沟通",
+      "plan": "领导，1小时培训",
+      "demand": "沟通提高"
+    }
+  ],
+  "water": [
+     {
+      "language":"日语",
+      "place": "无锡，常州，苏州",
+      "potential": "三级",
+      "Achievements": "良好",
+      "Strengths": "果断，效率高，组织能力",
+      "Development": "沟通，高效",
+      "plan": "学员，1小时培训",
+      "demand": "沟通提高"
+    }
+  ],
+  "cuisan": [
+     {
+      "language":"法语",
+      "place": "天津，厦门",
+      "potential": "二级",
+      "Achievements": "良好",
+      "Strengths": "组织能力，谈判能力",
+      "Development": "动手，演讲",
+      "plan": "1小时培训",
+      "demand": "演讲"
+    }
+  ],
+  "wuji": [
+     {
+      "language":"中文",
+      "place": "香港，台湾",
+      "potential": "三级",
+      "Achievements": "良好",
+      "Strengths": "软件，逻辑",
+      "Development": "演讲，沟通",
+      "plan": "1小时培训",
+      "demand": "沟通"
+    }
+  ],
+  "tianai": [
+     {
+      "language":"日语",
+      "place": "香港，台湾，日本",
+      "potential": "三级",
+      "Achievements": "良好",
+      "Strengths": "编程，软件",
+      "Development": "演讲",
+      "plan": "1小时培训",
+      "demand": "演讲"
+    }
+  ]  
+}

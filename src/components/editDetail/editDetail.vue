@@ -1,6 +1,6 @@
 <template>
   <div class="Edit_w">
-  	 <div class="top_w"><span class="back"><img src="./back.png" alt=""></span>个人信息录入</div>
+  	 <div class="top_w"><input class="back" type=button value="<" onclick="window.history.go(-1)">个人信息录入</div>
   	 <div class="container">
   	  <ul class="mess_list">
   	 	<li><span>直线主管：</span>SL-20120200349刘丽</li>
@@ -20,11 +20,130 @@
        <div class="weui_cell_bd weui_cell_primary">
             <p>语言：</p>
         </div>
-        <div class="weui_cell_ft">
-        </div>
+		<span class="cur-select"></span> 
+		<select> 
+		<option>英语</option> 
+		<option>中文</option> 
+		<option>日语</option> 
+		<option>法语</option> 
+		</select> 
     </a>
-</div>
   </div>
+
+   <div class="weui_cells weui_cells_access top_add">
+   <a class="weui_cell" href="javascript:;">
+       <div class="weui_cell_bd weui_cell_primary">
+            <p>是否愿意调动？</p>
+        </div>
+		  </label>
+            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+              <input type="checkbox" >
+              <i></i>
+            </label>
+            <span class="y_x">是</span>
+            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+              <input type="checkbox" >
+              <i></i>
+            </label>
+            <span class="y_f">否</span>
+    </a>
+  </div>
+  <div class="Input_box">
+  	<p>哪些地点？</p>
+  	<textarea name="" id="" cols="40" rows="3"></textarea>
+  </div>
+
+
+   <div class="weui_cells weui_cells_access top_add">
+   <a class="weui_cell" href="javascript:;">
+       <div class="weui_cell_bd weui_cell_primary">
+            <p>角色挑战度</p>
+        </div>
+		  </label>
+            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+              <input type="checkbox" >
+              <i></i>
+            </label>
+            <span class="y_x">高</span>
+            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+              <input type="checkbox" >
+              <i></i>
+            </label>
+            <span class="y_f">低</span>
+    </a>
+  </div>
+
+     <div class="weui_cells weui_cells_access top_add">
+   <a class="weui_cell" href="javascript:;">
+       <div class="weui_cell_bd weui_cell_primary">
+            <p>保留风险</p>
+        </div>
+		  </label>
+            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+              <input type="checkbox" >
+              <i></i>
+            </label>
+            <span class="y_x">高</span>
+            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+              <input type="checkbox" >
+              <i></i>
+            </label>
+            <span class="y_f">低</span>
+    </a>
+  </div>
+
+ <div class="weui_cells weui_cells_access top_add">
+   <a class="weui_cell" href="javascript:;">
+       <div class="weui_cell_bd weui_cell_primary">
+            <p>潜力等级：</p>
+        </div>
+		<span class="cur-select"></span> 
+		<select> 
+		<option>一级</option> 
+		<option>二级</option> 
+		<option>三级</option> 
+		<option>四级</option> 
+		</select> 
+    </a>
+  </div>
+
+   <div class="weui_cells weui_cells_access top_add">
+   <a class="weui_cell" href="javascript:;">
+       <div class="weui_cell_bd weui_cell_primary">
+            <p>绩效结果：</p>
+        </div>
+		<span class="cur-select"></span> 
+		<select> 
+		<option>一般</option> 
+		<option>良好</option> 
+		<option>满意</option> 
+		</select> 
+    </a>
+  </div>
+
+  <div class="Input_box">
+  	<p>强项</p>
+  	<textarea name="" id="" cols="40" rows="3"></textarea>
+  </div>
+
+    <div class="Input_box">
+  	<p>需要发展区域</p>
+  	<textarea name="" id="" cols="40" rows="3"></textarea>
+  </div>
+
+    <div class="Input_box">
+  	<p>行动计划（角色，培训，职责）</p>
+  	<textarea name="" id="" cols="40" rows="3"></textarea>
+  </div>
+
+    <div class="Input_box">
+  	<p>长期发展需求</p>
+  	<textarea name="" id="" cols="40" rows="3"></textarea>
+  </div>
+  <div class="container">
+     <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
+  </div>
+</div>
 </template>
 
 <script>
@@ -41,9 +160,11 @@
 .back {
 	position: absolute;
 	display: inline-block;
-	top:8px;
-	left: 8px;
+	top:-1px;
+	left: 0px;
 	width: 25px;
+	background-color: white;
+	border-bottom: #ccc solid 1px;
 }
 .back img {
 	width: 100%;
@@ -59,5 +180,19 @@
 }
 .top_add {
 	margin-top: 10px;
+}
+.y_x {
+	margin-left: 5px;
+	margin-right: 15px;
+}
+.y_f {
+	margin-left: 5px;
+}
+.Input_box {
+	width: 90%;
+	margin: 8px auto;
+} 
+.Input_box p {
+ margin-bottom: 6px;
 }
 </style>

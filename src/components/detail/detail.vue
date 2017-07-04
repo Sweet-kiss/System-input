@@ -50,7 +50,7 @@
   </div>
   <div class="Input_box">
     <p>哪些地点？</p>
-    <textarea name="" id="" cols="40" rows="3">{{}}</textarea>
+    <textarea name="" id="" cols="40" rows="3">{{detail.place}}</textarea>
   </div>
 
 
@@ -148,9 +148,18 @@
 
 <script>
 export default {
+  data () {
+    return {
+      detail: {
+        place: ''
+      }
+    }
+  },
   created () {
+    var _this = this
     this.$http.get('/api'+this.$route.query.url).then((response) => {
       console.log(JSON.stringify(response))
+      _this.detail = response.body.data[0]
     });
   }
 }

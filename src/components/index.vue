@@ -3,7 +3,7 @@
       <div class="top_add"><img src="../assets/images/add.png" alt="" @click="edit()"></div>
    
     
-   <div v-for="information in informations" class="weui_cells weui_cells_access weui_add">
+   <div v-for="information in informations" @click="check(information.path)" class="weui_cells weui_cells_access weui_add">
       <a class="weui_cell" href="javascript:;">
          <div class="weui_cell_bd weui_cell_primary">
             <p class="code_m">{{ information.Employee_code }}</p>
@@ -20,58 +20,22 @@
 export default {
   data () {
     return {
-      informations: [
-      {
-        Employee_code: '员工编码：7566775556',
-        Chinese_name: '中文名：张高山',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：72634523421',
-        Chinese_name: '中文名：张流水',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：341242352',
-        Chinese_name: '中文名：张翠山',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：341242352',
-        Chinese_name: '中文名：张翠山',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：3452542',
-        Chinese_name: '中文名：张无忌',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：3452542',
-        Chinese_name: '中文名：张无忌',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：3452542',
-        Chinese_name: '中文名：张无忌',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：3452542',
-        Chinese_name: '中文名：张无忌',
-        English_name: '英文名：Mountain'
-      },
-      {
-        Employee_code: '员工编码：3452542',
-        Chinese_name: '中文名：张无忌',
-        English_name: '英文名：Mountain'
-      }
-     ]
+      informations: []
     }
+  },
+  created () {
+    let _this = this
+    this.$http.get('/api/informations').then((response) => {
+      console.log(JSON.stringify(response))
+      _this.informations = response.body.data
+    });
   },
   methods: {
     edit () {
       this.$router.push({ path: '/edit' })
+    },
+    check (url) {
+      this.$router.push({ path: '/detail', query: { url: url } })
     }
   }
 }

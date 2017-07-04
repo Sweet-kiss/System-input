@@ -28,12 +28,48 @@ app.use('static',express.static('public'))
 
 var appData = require('../data.json')
 var informations = appData.informations
+var Mountain = appData.Mountain
+var water = appData.water
+var cuisan = appData.cuisan
+var wuji = appData.wuji
+var tianai = appData.tianai
 
 var apiRoutes = express.Router()
+
 apiRoutes.get('/informations', function (req,res){
    res.json({
      erron:0,
      data: informations
+   })
+})
+apiRoutes.get('/Mountain', function (req,res){
+   res.json({
+     erron:0,
+     data: Mountain
+   })
+})
+apiRoutes.get('/water', function (req,res){
+   res.json({
+     erron:0,
+     data: water
+   })
+})
+apiRoutes.get('/cuisan', function (req,res){
+   res.json({
+     erron:0,
+     data: cuisan
+   })
+})
+apiRoutes.get('/wuji', function (req,res){
+   res.json({
+     erron:0,
+     data: wuji
+   })
+})
+apiRoutes.get('/tianai', function (req,res){
+   res.json({
+     erron:0,
+     data: tianai
    })
 })
 

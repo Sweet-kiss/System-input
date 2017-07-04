@@ -149,7 +149,7 @@
 <script>
 export default {
   created () {
-    this.$http.get('/api/informations').then((response) => {
+    this.$http.get('/api'+this.$route.query.url).then((response) => {
       console.log(JSON.stringify(response))
     });
   }

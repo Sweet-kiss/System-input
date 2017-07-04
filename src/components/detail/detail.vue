@@ -3,16 +3,46 @@
      <div class="top_w"><input class="back" type=button value="<" onclick="window.history.go(-1)">个人信息录入</div>
      <div class="container">
       <ul class="mess_list">
-      <li><span>直线主管：</span>SL-20120200349刘丽</li>
-      <li><span>RD区域总监：</span>RD-Alex.YANG</li>
-      <li><span>AM：</span>AM-Alex.YANG</li>
-      <li><span>所在营运点：</span>TS Lilly Research</li>
-      <li><span>员工编码：</span>20111000679</li>
-      <li><span>中文名：</span>夏鸣莹</li>
-      <li><span>英文名：</span>20111000679</li>
-      <li><span>所在地：</span>  SH</li>
-      <li><span>细分市场/服务：</span>  COR</li>
-      <li><span>本岗时间：</span>  2014/8/1</li>
+      <li>
+         <span>直线主管：</span>
+         <i>SL-20120200349刘丽</i>
+      </li>
+      <li>
+         <span>RD区域总监：</span>
+         <i>RD-Alex.YANG</i>
+      </li>
+      <li>
+         <span>AM：</span>
+         <i>AM-Alex.YANG</i>
+      </li>
+      <li>
+         <span>所在营运点：</span>
+         <i>TS Lilly Research</i>
+      </li>
+      <li>
+         <span>员工编码：</span>
+         <i>20111000679</i>
+      </li>
+      <li>
+         <span>中文名：</span>
+         <i>夏鸣莹</i>
+      </li>
+      <li>
+         <span>英文名：</span>
+         <i>20111000679</i>
+      </li>
+      <li>
+         <span>所在地：</span>
+         <i>SH</i>
+      </li>
+      <li>
+         <span>细分市场/服务：</span>
+         <i>COR</i>
+      </li>
+      <li>
+         <span>本岗时间：</span>
+         <i>2014/8/1</i>
+      </li>
       </ul>
      </div>
  <div class="weui_cells weui_cells_access top_add">
@@ -193,13 +223,15 @@ export default {
   width: 100%;
 }
 .mess_list li {
-  height: 23px;
-  line-height: 23px;
-  color: #474646;
+  display: flex;
+  height: 33px;
+  line-height: 33px;
+  font-size: 18px;
 }
 .mess_list li span {
-   color: #04be02;
-   margin-right: 10px;
+  display: flex;
+  width: 140px;
+   color: #6f6f70;
 }
 .top_add {
   margin-top: 10px;

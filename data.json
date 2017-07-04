@@ -1,6 +1,25 @@
 {
-  "informations": [
-    {
+  "informations": [{
+     "name":"B",
+    "list": [{
+       "Key": "Tina",
+       "Employee_code": "员工编码：64453633",
+       "Chinese_name": "包晶晶",
+       "English_name": "英文名：Tina",
+       "path": "/Tina"
+      }]
+    }, {
+    "name":"C",
+    "list": [{
+       "Key": "star",
+       "Employee_code": "员工编码：99988823",
+       "Chinese_name": "曹星星",
+       "English_name": "英文名：star",
+       "path": "/star"
+      }]
+    }, {
+     "name": "Z",
+     "list":[{
       "Key":"Mountain",
       "Employee_code": "员工编码：7566775556",
       "Chinese_name": "张高山",
@@ -34,8 +53,8 @@
       "Chinese_name": "张天爱",
       "English_name": "英文名：tianai",
       "path": "/tianai"
-    }
-  ],
+    }]
+  }],
   "Mountain": [
      {
       "language":"英语",

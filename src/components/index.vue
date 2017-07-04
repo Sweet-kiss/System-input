@@ -1,18 +1,20 @@
 <template>
-   <div class="index_w">
-      <div class="top_add"><img src="../assets/images/add.png" alt="" @click="edit()"></div>
-   
-    
-   <div v-for="information in informations" @click="check(information.path)" class="weui_cells weui_cells_access weui_add">
-      <a class="weui_cell" href="javascript:;">
-         <div class="weui_cell_bd weui_cell_primary">
-            <p class="code_m">{{ information.Employee_code }}</p>
-            <p class="name_o"><span>{{ information.Chinese_name }}</span><span>{{ information.English_name }}</span></p>
-         </div>
-        <div class="weui_cell_ft">
+  <div class="index_w">
+    <div class="top_add"><img src="../assets/images/add.png" alt="" @click="edit()"></div>
+    <mt-index-list>
+      <mt-index-section v-for="value in informations" :index="value.name">
+        <div v-for="item in value.list" @click="check(item.path)" class="weui_cells weui_cells_access weui_add">
+          <a class="weui_cell" href="javascript:;">
+             <div class="weui_cell_bd weui_cell_primary">
+                <p class="code_m">{{ item.Employee_code }}</p>
+                <p class="name_o"><span>{{ item.Chinese_name }}</span><span>{{ item.English_name }}</span></p>
+             </div>
+            <div class="weui_cell_ft">
+            </div>
+          </a>
         </div>
-      </a>
-    </div>   
+      </mt-index-section>
+    </mt-index-list>
  </div>
 </template>
 
@@ -20,7 +22,8 @@
 export default {
   data () {
     return {
-      informations: []
+      informations: [],
+      list: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     }
   },
   created () {

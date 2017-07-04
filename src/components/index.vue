@@ -26,7 +26,7 @@ export default {
   created () {
     let _this = this
     this.$http.get('/api/informations').then((response) => {
-      console.log(JSON.stringify(response))
+      // console.log(JSON.stringify(response))
       _this.informations = response.body.data
     });
   },

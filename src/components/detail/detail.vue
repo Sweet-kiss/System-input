@@ -21,11 +21,11 @@
             <p>语言：</p>
         </div>
     <span class="cur-select"></span> 
-    <select> 
-    <option>英语</option> 
-    <option>中文</option> 
-    <option>日语</option> 
-    <option>法语</option> 
+    <select v-model="detail.language" class="language_c"> 
+    <option value="英语">英语</option> 
+    <option value="中文">中文</option> 
+    <option value="日语">日语</option> 
+    <option value="法语">法语</option> 
     </select> 
     </a>
   </div>
@@ -37,12 +37,12 @@
         </div>
       </label>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" name="Desire" value="是" v-model="detail.Desire">
               <i></i>
             </label>
             <span class="y_x">是</span>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" name="Desire" value="否" v-model="detail.Desire">
               <i></i>
             </label>
             <span class="y_f">否</span>
@@ -61,12 +61,12 @@
         </div>
       </label>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" name="Dekaron" value="高" v-model="detail.Dekaron">
               <i></i>
             </label>
             <span class="y_x">高</span>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" name="Dekaron" value="低" v-model="detail.Dekaron">
               <i></i>
             </label>
             <span class="y_f">低</span>
@@ -80,12 +80,12 @@
         </div>
       </label>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" name="risk" value="高" v-model="detail.risk">
               <i></i>
             </label>
             <span class="y_x">高</span>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" name="risk" value="低" v-model="detail.risk">
               <i></i>
             </label>
             <span class="y_f">低</span>
@@ -98,11 +98,11 @@
             <p>潜力等级：</p>
         </div>
     <span class="cur-select"></span> 
-    <select> 
-    <option>一级</option> 
-    <option>二级</option> 
-    <option>三级</option> 
-    <option>四级</option> 
+    <select v-model="detail.potential" class="language_c"> 
+    <option value="一级">一级</option> 
+    <option value="二级">二级</option> 
+    <option value="三级">三级</option> 
+    <option value="四级">四级</option> 
     </select> 
     </a>
   </div>
@@ -113,32 +113,32 @@
             <p>绩效结果：</p>
         </div>
     <span class="cur-select"></span> 
-    <select> 
-    <option>一般</option> 
-    <option>良好</option> 
-    <option>满意</option> 
+    <select v-model="detail.Achievements" class="language_c"> 
+    <option value="一般">一般</option> 
+    <option value="良好">良好</option> 
+    <option value="满意">满意</option> 
     </select> 
     </a>
   </div>
 
   <div class="Input_box">
     <p>强项</p>
-    <textarea name="" id="" cols="40" rows="3"></textarea>
+    <textarea name="" id="" cols="40" rows="3">{{detail.Strengths}}</textarea>
   </div>
 
     <div class="Input_box">
     <p>需要发展区域</p>
-    <textarea name="" id="" cols="40" rows="3"></textarea>
+    <textarea name="" id="" cols="40" rows="3">{{detail.Development}}</textarea>
   </div>
 
     <div class="Input_box">
     <p>行动计划（角色，培训，职责）</p>
-    <textarea name="" id="" cols="40" rows="3"></textarea>
+    <textarea name="" id="" cols="40" rows="3">{{detail.plan}}</textarea>
   </div>
 
     <div class="Input_box">
     <p>长期发展需求</p>
-    <textarea name="" id="" cols="40" rows="3"></textarea>
+    <textarea name="" id="" cols="40" rows="3">{{detail.demand}}</textarea>
   </div>
   <div class="container">
      <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
@@ -151,8 +151,14 @@ export default {
   data () {
     return {
       detail: {
-        place: ''
-      }
+        place: '',
+        language: '',
+        potential: '',
+        Achievements: '',
+        Desire: '',
+        risk: '',
+        Dekaron: ''
+      },
     }
   },
   created () {
@@ -211,5 +217,10 @@ export default {
 } 
 .Input_box p {
  margin-bottom: 6px;
+}
+.language_c {
+  width: 100px;
+  height: 30px;
+  border: none;
 }
 </style>

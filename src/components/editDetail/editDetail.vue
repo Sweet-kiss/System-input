@@ -21,7 +21,7 @@
             <p>语言：</p>
         </div>
 		<span class="cur-select"></span> 
-		<select> 
+		<select class="language_c"> 
 		<option>英语</option> 
 		<option>中文</option> 
 		<option>日语</option> 
@@ -37,12 +37,12 @@
         </div>
 		  </label>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" >
               <i></i>
             </label>
             <span class="y_x">是</span>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio"  >
               <i></i>
             </label>
             <span class="y_f">否</span>
@@ -61,12 +61,12 @@
         </div>
 		  </label>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" >
               <i></i>
             </label>
             <span class="y_x">高</span>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" >
               <i></i>
             </label>
             <span class="y_f">低</span>
@@ -80,12 +80,12 @@
         </div>
 		  </label>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" >
               <i></i>
             </label>
             <span class="y_x">高</span>
             <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="checkbox" >
+              <input type="radio" >
               <i></i>
             </label>
             <span class="y_f">低</span>
@@ -98,7 +98,7 @@
             <p>潜力等级：</p>
         </div>
 		<span class="cur-select"></span> 
-		<select> 
+		<select class="language_c"> 
 		<option>一级</option> 
 		<option>二级</option> 
 		<option>三级</option> 
@@ -113,7 +113,7 @@
             <p>绩效结果：</p>
         </div>
 		<span class="cur-select"></span> 
-		<select> 
+		<select class="language_c"> 
 		<option>一般</option> 
 		<option>良好</option> 
 		<option>满意</option> 
@@ -202,5 +202,10 @@ export default {
 } 
 .Input_box p {
  margin-bottom: 6px;
+}
+.language_c {
+  width: 100px;
+  height: 30px;
+  border: none;
 }
 </style>

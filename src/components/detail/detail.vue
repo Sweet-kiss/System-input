@@ -114,7 +114,7 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea">{{detail.Strengths}}</textarea></textarea>
+                <textarea class="weui_textarea weUI_TT">{{detail.Strengths}}</textarea></textarea>
            </div>
      </div>
 </div>
@@ -123,7 +123,7 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea">{{detail.Development}}</textarea>
+                <textarea class="weui_textarea weUI_TT">{{detail.Development}}</textarea>
            </div>
      </div>
 </div>
@@ -132,7 +132,7 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea">{{detail.plan}}</textarea>
+                <textarea class="weui_textarea weUI_TT">{{detail.plan}}</textarea>
            </div>
      </div>
 </div>
@@ -141,7 +141,7 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea">{{detail.demand}}</textarea>
+                <textarea class="weui_textarea weUI_TT">{{detail.demand}}</textarea>
            </div>
      </div>
 </div>
@@ -288,5 +288,8 @@ export default {
   width: 100%;
   margin-left: 0px;
   margin: 0px 0px;
+}
+.weUI_TT {
+  color: #a1a1a0;
 }
 </style>

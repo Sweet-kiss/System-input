@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Index from '@/components/index'
 import EditDetail from '@/components/editDetail/editDetail'
 import Detail from '@/components/detail/detail'
+import SelectAudit from '@/components/SelectAudit/SelectedAudit'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ export default new VueRouter({
       path: '/detail',
       name: 'detail',
       component: Detail
-    }
+    },
+    {
+      path: '/SelectAudit',
+      name: 'SelectAudit',
+      component: SelectAudit
+    }    
   ]
 })

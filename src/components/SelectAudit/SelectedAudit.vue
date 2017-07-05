@@ -1,52 +1,18 @@
 <template>
-  <div class="Edit_w">
-     <div class="top_w"><input class="back" type=button value="<" onclick="window.history.go(-1)">个人信息录入</div>
-     <div class="container">
-      <ul class="mess_list">
-      <li>
-         <span>直线主管：</span>
-         <i>SL-20120200349刘丽</i>
-      </li>
-      <li>
-         <span>RD区域总监：</span>
-         <i>RD-Alex.YANG</i>
-      </li>
-      <li>
-         <span>AM：</span>
-         <i>AM-Alex.YANG</i>
-      </li>
-      <li>
-         <span>所在营运点：</span>
-         <i>TS Lilly Research</i>
-      </li>
-      <li>
-         <span>员工编码：</span>
-         <i>20111000679</i>
-      </li>
-      <li>
-         <span>中文名：</span>
-         <i>夏鸣莹</i>
-      </li>
-      <li>
-         <span>英文名：</span>
-         <i>20111000679</i>
-      </li>
-      <li>
-         <span>所在地：</span>
-         <i>SH</i>
-      </li>
-      <li>
-         <span>细分市场/服务：</span>
-         <i>COR</i>
-      </li>
-      <li>
-         <span>本岗时间：</span>
-         <i>2014/8/1</i>
-      </li>
-      </ul>
-     </div>
-<div class="weui_cells_title language">语言</div>
-<div class="weui_cell weui_cell_select">
+ <div>
+        <div class="nav">
+            <mt-button size="small" @click="test('tab-container1')">审核1</mt-button>
+            <mt-button size="small" @click="test('tab-container2')">审核2</mt-button>
+            
+        </div>
+        <div class="page-tab-container" >
+            <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable value="tab-container1">
+                <mt-tab-container-item id="tab-container1" >
+                    
+<div class="Edit_w">
+
+  <div class="weui_cells_title language">语言222</div>
+  <div class="weui_cell weui_cell_select">
     <div class="weui_cell_bd weui_cell_primary">
        <select class="weui_select select_u" name="select1" v-model="detail.language" >
           <option value="中文">中文</option>
@@ -150,13 +116,136 @@
      <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
   </div>
 </div>
+
+
+
+                </mt-tab-container-item>
+                <mt-tab-container-item id="tab-container2">
+                
+<div class="Edit_w">
+
+  <div class="weui_cells_title language">语言</div>
+  <div class="weui_cell weui_cell_select">
+    <div class="weui_cell_bd weui_cell_primary">
+       <select class="weui_select select_u" name="select1" v-model="detail.language" >
+          <option value="中文">中文</option>
+          <option value="日语">日语</option>
+          <option value="英语">英语</option>
+          <option value="法语">法语</option>
+       </select>
+  </div>
+</div>
+
+<div class="top_add2">
+           <span class="text_y">是否愿意调动？</span>
+       <div class="switch_b">
+        <mt-switch name="Desire"  v-model="detail.Desire"></mt-switch>
+       </div>
+</div>
+
+<div class="weui_cells_title adress">那些地点？</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea weUI_TT">{{detail.place}}</textarea>
+           </div>
+     </div>
+</div>
+<mt-radio
+  align="right"
+  title="角色挑战度"
+  v-model="detail.Dekaron"
+  :options="['高', '低']">
+</mt-radio>
+
+<mt-radio
+  align="right"
+  title="保留风险"
+  v-model="detail.Dekaron"
+  :options="['高', '低']">
+</mt-radio>
+
+<div class="weui_cells_title language">潜力等级：</div>
+<div class="weui_cell weui_cell_select">
+    <div class="weui_cell_bd weui_cell_primary">
+       <select class="weui_select select_u" name="select1" v-model="detail.potential">
+          <option value="一级<">一级</option>
+          <option value="二级">二级</option>
+          <option value="三级">三级</option>
+          <option value="四级">四级</option>
+       </select>
+  </div>
+</div>
+
+
+<div class="weui_cells_title language">绩效结果：</div>
+<div class="weui_cell weui_cell_select">
+    <div class="weui_cell_bd weui_cell_primary">
+       <select class="weui_select select_u" name="select1" v-model="detail.Achievements">
+          <option value="一般">一般</option>
+          <option value="良好">良好</option>
+          <option value="满意">满意</option>
+        </select>
+  </div>
+</div>
+
+ <div class="weui_cells_title adress">强项</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea weUI_TT">{{detail.Strengths}}</textarea></textarea>
+           </div>
+     </div>
+</div>
+
+<div class="weui_cells_title adress">需要发展区域</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea weUI_TT">{{detail.Development}}</textarea>
+           </div>
+     </div>
+</div>
+
+<div class="weui_cells_title adress">行动计划（角色，培训，职责）</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea weUI_TT">{{detail.plan}}</textarea>
+           </div>
+     </div>
+</div>
+
+<div class="weui_cells_title adress">长期发展需求</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea weUI_TT">{{detail.demand}}</textarea>
+           </div>
+     </div>
+</div>
+
+  <div class="container">
+     <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
+  </div>
+</div>
+
+
+                </mt-tab-container-item>
+               
+            </mt-tab-container>
+        </div>
+    </div>
+
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      detail: {
+    export default {
+        name: 'page-tab-container',
+        data() {
+            return {
+                active: "tab-container1",
+                detail: {
         place: '',
         language: '',
         potential: '',
@@ -165,16 +254,22 @@ export default {
         risk: '',
         Dekaron: ''
       }
-    }
-  },
-  created () {
+            }
+        },
+        methods:{
+            test(id){
+                this.active = id
+                console.log(this.active)
+            }
+        },
+        created () {
     var _this = this
     this.$http.get('/api'+this.$route.query.url).then((response) => {
       console.log(JSON.stringify(response))
       _this.detail = response.body.data[0]
     })
   }
-}
+    }
 </script>
 
 <style>
@@ -291,5 +386,17 @@ export default {
 }
 .weUI_TT {
   color: #a1a1a0;
+}
+.nav {
+  display: flex;
+}
+.mint-button--small {
+  width: 50%;
+  font-size: 20px;
+  height: 40px;
+  border-radius: none;
+}
+.mint-button {
+  border-radius: 0px;
 }
 </style>

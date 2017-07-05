@@ -1,8 +1,8 @@
 <template>
  <div>
         <div class="nav">
-            <mt-button size="small" @click="test('tab-container1')">审核1</mt-button>
-            <mt-button size="small" @click="test('tab-container2')">审核2</mt-button>
+            <mt-button id="tab-container1-btn" size="small" @click="test('tab-container1')" style="color: red">审核1</mt-button>
+            <mt-button id="tab-container2-btn" size="small" @click="test('tab-container2')">审核2</mt-button>
             
         </div>
         <div class="page-tab-container" >
@@ -263,13 +263,25 @@
             }
         },
         created () {
-    var _this = this
-    this.$http.get('/api'+this.$route.query.url).then((response) => {
-      console.log(JSON.stringify(response))
-      _this.detail = response.body.data[0]
-    })
+          var _this = this
+          this.$http.get('/api'+this.$route.query.url).then((response) => {
+            console.log(JSON.stringify(response))
+            _this.detail = response.body.data[0]
+          })
+        },
+        watch: {
+          active () {
+            if (this.active == 'tab-container1') {
+              document.getElementById('tab-container1-btn').style.color = 'red'
+              document.getElementById('tab-container2-btn').style.color = 'black'
+            } else {
+              document.getElementById('tab-container2-btn').style.color = 'red'
+              document.getElementById('tab-container1-btn').style.color = 'black'
+            }
+          }
+        }
+    // }
   }
-    }
 </script>
 
 <style>

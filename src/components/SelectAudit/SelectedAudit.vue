@@ -411,4 +411,5 @@
 .mint-button {
   border-radius: 0px;
 }
+
 </style>

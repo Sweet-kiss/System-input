@@ -45,131 +45,111 @@
       </li>
   	  </ul>
   	 </div>
- <div class="weui_cells weui_cells_access top_add">
-   <a class="weui_cell" href="javascript:;">
-       <div class="weui_cell_bd weui_cell_primary">
-            <p>语言：</p>
-        </div>
-		<span class="cur-select"></span> 
-		<select class="language_c"> 
-		<option>英语</option> 
-		<option>中文</option> 
-		<option>日语</option> 
-		<option>法语</option> 
-		</select> 
-    </a>
-  </div>
 
-   <div class="weui_cells weui_cells_access top_add">
-   <a class="weui_cell" href="javascript:;">
-       <div class="weui_cell_bd weui_cell_primary">
-            <p>是否愿意调动？</p>
-        </div>
-		  </label>
-            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="radio" >
-              <i></i>
-            </label>
-            <span class="y_x">是</span>
-            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="radio"  >
-              <i></i>
-            </label>
-            <span class="y_f">否</span>
-    </a>
+<div class="weui_cells_title language">语言</div>
+<div class="weui_cell weui_cell_select">
+    <div class="weui_cell_bd weui_cell_primary">
+       <select class="weui_select select_u" name="select1">
+          <option selected="" value="1">中文</option>
+          <option value="2">日语</option>
+          <option value="3">英语</option>
+          <option value="2">法语</option>
+       </select>
   </div>
-  <div class="Input_box">
-  	<p>哪些地点？</p>
-  	<textarea name="" id="" cols="40" rows="3"></textarea>
-  </div>
+</div>
 
 
-   <div class="weui_cells weui_cells_access top_add">
-   <a class="weui_cell" href="javascript:;">
-       <div class="weui_cell_bd weui_cell_primary">
-            <p>角色挑战度</p>
-        </div>
-		  </label>
-            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="radio" >
-              <i></i>
-            </label>
-            <span class="y_x">高</span>
-            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="radio" >
-              <i></i>
-            </label>
-            <span class="y_f">低</span>
-    </a>
-  </div>
+  <div class="top_add2">
+        <span class="text_y">是否愿意调动？</span>
+       <div class="switch_b">
+        <mt-switch v-model="value"></mt-switch>
+       </div>
+</div>
 
-     <div class="weui_cells weui_cells_access top_add">
-   <a class="weui_cell" href="javascript:;">
-       <div class="weui_cell_bd weui_cell_primary">
-            <p>保留风险</p>
-        </div>
-		  </label>
-            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="radio" >
-              <i></i>
-            </label>
-            <span class="y_x">高</span>
-            <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
-              <input type="radio" >
-              <i></i>
-            </label>
-            <span class="y_f">低</span>
-    </a>
-  </div>
+<div class="weui_cells_title adress">那些地点？</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea"></textarea>
+           </div>
+     </div>
+</div>
 
- <div class="weui_cells weui_cells_access top_add">
-   <a class="weui_cell" href="javascript:;">
-       <div class="weui_cell_bd weui_cell_primary">
-            <p>潜力等级：</p>
-        </div>
-		<span class="cur-select"></span> 
-		<select class="language_c"> 
-		<option>一级</option> 
-		<option>二级</option> 
-		<option>三级</option> 
-		<option>四级</option> 
-		</select> 
-    </a>
-  </div>
+<mt-radio
+  align="right"
+  title="角色挑战度"
+  v-model="value"
+  :options="['高', '低']">
+</mt-radio>
 
-   <div class="weui_cells weui_cells_access top_add">
-   <a class="weui_cell" href="javascript:;">
-       <div class="weui_cell_bd weui_cell_primary">
-            <p>绩效结果：</p>
-        </div>
-		<span class="cur-select"></span> 
-		<select class="language_c"> 
-		<option>一般</option> 
-		<option>良好</option> 
-		<option>满意</option> 
-		</select> 
-    </a>
-  </div>
+<mt-radio
+  align="right"
+  title="保留风险"
+  v-model="value"
+  :options="['高', '低']">
+</mt-radio>
 
-  <div class="Input_box">
-  	<p>强项</p>
-  	<textarea name="" id="" cols="40" rows="3"></textarea>
+<div class="weui_cells_title language">潜力等级：</div>
+<div class="weui_cell weui_cell_select">
+    <div class="weui_cell_bd weui_cell_primary">
+       <select class="weui_select select_u" name="select1">
+          <option selected="" value="1">一级</option>
+          <option value="2">二级</option>
+          <option value="3">三级</option>
+          <option value="2">四级</option>
+       </select>
   </div>
+</div>
 
-    <div class="Input_box">
-  	<p>需要发展区域</p>
-  	<textarea name="" id="" cols="40" rows="3"></textarea>
+<div class="weui_cells_title language">绩效结果：</div>
+<div class="weui_cell weui_cell_select">
+    <div class="weui_cell_bd weui_cell_primary">
+       <select class="weui_select select_u" name="select1">
+          <option selected="" value="1">一般</option>
+          <option value="2">良好</option>
+          <option value="3">满意</option>
+        </select>
   </div>
+</div>
 
-    <div class="Input_box">
-  	<p>行动计划（角色，培训，职责）</p>
-  	<textarea name="" id="" cols="40" rows="3"></textarea>
-  </div>
 
-    <div class="Input_box">
-  	<p>长期发展需求</p>
-  	<textarea name="" id="" cols="40" rows="3"></textarea>
-  </div>
+<div class="weui_cells_title adress">强项</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea"></textarea>
+           </div>
+     </div>
+</div>
+
+<div class="weui_cells_title adress">需要发展区域</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea"></textarea>
+           </div>
+     </div>
+</div>
+
+<div class="weui_cells_title adress">行动计划（角色，培训，职责）</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea"></textarea>
+           </div>
+     </div>
+</div>
+
+<div class="weui_cells_title adress">长期发展需求</div>
+<div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+           <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea"></textarea>
+           </div>
+     </div>
+</div>
+
+ 
   <div class="container">
      <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
   </div>
@@ -187,20 +167,24 @@ export default {
 </script>
 
 <style>
+.Edit_w {
+  padding-bottom: 20px;
+}
 .top_w {
 	position: relative;
+  font-size: 19px;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
-	color: #04be02;
+	color: #26a2ff;
 	border-bottom: #ccc solid 1px;
 }
 .back {
 	position: absolute;
 	display: inline-block;
 	top:-1px;
-	left: 0px;
-	width: 25px;
+	left: 8px;
+	width: 28px;
 	background-color: white;
 	border-bottom: #ccc solid 1px;
 }
@@ -224,9 +208,23 @@ export default {
   width: 140px;
    color: #6f6f70;
 }
-.top_add {
-	margin-top: 10px;
+.top_add2 {
+  display: flex;
+  height: 40px;
+ margin-top: 20px;
+ border-bottom: #e4e4e4 solid 1px;
 }
+.text_y {
+  flex:1;
+  font-size: 18px;
+  text-indent: 14px;
+ }
+.switch_b {
+  display: flex;
+  width: 70px;
+  margin-top: -25px;
+}
+
 .y_x {
 	margin-left: 5px;
 	margin-right: 15px;
@@ -241,9 +239,43 @@ export default {
 .Input_box p {
  margin-bottom: 6px;
 }
-.language_c {
-  width: 100px;
-  height: 30px;
-  border: none;
+.weui_cells_title {
+  background-color: #f9f9f9;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.language {
+  font-size: 18px;
+   color: black;
+}
+.select_u {
+  color: #7b7c7d;
+  border-bottom: #eaeaea solid 1px;
+}
+.adress {
+  font-size: 18px;
+  color: black;
+}
+.high_d {
+  font-size: 18px;
+  color: black;
+}
+.mint-radiolist-title {
+  font-size: 18px;
+  color: black;
+}
+.weui_btn_primary {
+  background-color: #26a2ff !important;
+}
+.mint-radiolist-title {
+  background-color: #f9f9f9;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 14px;
+  width: 100%;
+  margin-left: 0px;
+  margin: 0px 0px;
 }
 </style>

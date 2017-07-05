@@ -1,6 +1,6 @@
 <template>
   <div class="index_w">
-    <div class="top_add"><img src="../assets/images/add.png" alt="" @click="edit()"></div>
+    <div class="top_add"><span class="img_add"><img src="../assets/images/add.png" alt="" @click="edit()"></span></div>
     <mt-index-list>
       <mt-index-section v-for="value in informations" :index="value.name">
         <div v-for="item in value.list" @click="check(item.path)" class="weui_cells weui_cells_access weui_add">
@@ -43,26 +43,35 @@ export default {
   }
 }
 </script>
-<style>
-.code_m{
-  color: #04be02;
+<style> 
+.index_w {
+  position: relative;
 }
 .top_add {
-  width: 100%;
-  height: 50px;
-  text-align: right;
+  width: 90%;
+  margin: 10px auto;
+  height: 40px;
 }
-.top_add img {
+.code_m{
+  color:#26a2ff;
+  font-size: 18px;
+}
+.img_add {
+  display: inline-block;
+  float: right;
   width: 30px;
-  margin-top: 10px;
-  margin-right: 5px;
+  height: 50px;
+}
+.img_add img {
+  width: 100%;
+
 }
 .weui_add {
   border-top: none;
   margin-top: 0px;
 }
 .name_o {
-  font-size: small;
+  font-size: 17px;
 }
 .name_o span{
   margin-right: 10px;

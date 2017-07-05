@@ -58,7 +58,7 @@
   "Mountain": [
      {
       "language":"英语",
-      "Desire": "是",
+      "Desire": true,
       "place": "上海，北京，重庆",
       "Dekaron": "高",
       "risk": "低",
@@ -73,7 +73,7 @@
   "water": [
      {
       "language":"日语",
-      "Desire": "是",
+      "Desire": true,
       "place": "无锡，常州，苏州",
       "Dekaron": "高",
       "risk": "高",
@@ -88,7 +88,7 @@
   "cuisan": [
      {
       "language":"法语",
-      "Desire": "否",
+      "Desire": false,
       "place": "天津，厦门",
       "Dekaron": "低",
       "risk": "低",
@@ -103,7 +103,7 @@
   "wuji": [
      {
       "language":"中文",
-      "Desire": "否",
+      "Desire": false,
       "place": "香港，台湾",
       "Dekaron": "低",
       "risk": "低",
@@ -118,7 +118,7 @@
   "tianai": [
      {
       "language":"日语",
-      "Desire": "是",
+      "Desire": true,
       "place": "香港，台湾，日本",
       "Dekaron": "低",
       "risk": "高",

@@ -1,18 +1,13 @@
 <template>
-<div>fff</div>
-</template>
-<template>
-  <div class="index_w">
-
-   <div class="top_w"><input class="back" type=button value="<" onclick="window.history.go(-1)">批量同意</div>
+   <div class="index_w">
+   <div class="top_w"><input class="back" type=button value="<" onclick="window.history.go(-1)">个人信息录入</div>
     <div class="top_add">
     
+     <mt-index-list>
       <mt-index-section v-for="value in informations" :index="value.name">
         <div v-for="item in value.list" @click="check(item.path)" class="weui_cells weui_cells_access weui_add">
           <a class="weui_cell" href="javascript:;">
              <div class="weui_cell_bd weui_cell_primary">
-                <input class="checkbox_rr" type="checkbox" name="abc" value="1" />
-
                 <p class="code_m">{{ item.Employee_code }}</p>
                 <p class="name_o"><span>{{ item.Chinese_name }}</span><span>{{ item.English_name }}</span></p>
              </div>
@@ -22,8 +17,8 @@
         </div>
       </mt-index-section>
     </mt-index-list>
-    </div>
  </div>
+</div>
 </template>
 
 <script>
@@ -44,6 +39,24 @@ export default {
 }
 </script>
 <style> 
+.top_w {
+	position: relative;
+  font-size: 19px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #26a2ff;
+	border-bottom: #ccc solid 1px;
+}
+.back {
+	position: absolute;
+	display: inline-block;
+	top:-1px;
+	left: 8px;
+	width: 28px;
+	background-color: white;
+	border-bottom: #ccc solid 1px;
+}
 .index_w {
   position: relative;
 }

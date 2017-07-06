@@ -1,21 +1,18 @@
 <template>
+<div>fff</div>
+</template>
+<template>
   <div class="index_w">
+
+   <div class="top_w"><input class="back" type=button value="<" onclick="window.history.go(-1)">批量同意</div>
     <div class="top_add">
     
-      <div class="button_sp_area">
-  
-          <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary" @click="chose()">按钮</a>
-  
-      </div>
-
-       <span class="img_add">
-        <img src="../assets/images/add.png" alt="" @click="edit()"></span>
-        </div>
-    <mt-index-list>
       <mt-index-section v-for="value in informations" :index="value.name">
         <div v-for="item in value.list" @click="check(item.path)" class="weui_cells weui_cells_access weui_add">
           <a class="weui_cell" href="javascript:;">
              <div class="weui_cell_bd weui_cell_primary">
+                <input class="checkbox_rr" type="checkbox" name="abc" value="1" />
+
                 <p class="code_m">{{ item.Employee_code }}</p>
                 <p class="name_o"><span>{{ item.Chinese_name }}</span><span>{{ item.English_name }}</span></p>
              </div>
@@ -25,6 +22,7 @@
         </div>
       </mt-index-section>
     </mt-index-list>
+    </div>
  </div>
 </template>
 
@@ -38,21 +36,10 @@ export default {
   },
   created () {
     let _this = this
-    this.$http.get('http://121.40.75.24:8010/api/sodexo/getTalent?type=1').then((response) => {
-      console.log(JSON.stringify(response))
+    this.$http.get('/api/informations').then((response) => {
+      // console.log(JSON.stringify(response))
       _this.informations = response.body.data
-    });
-  },
-  methods: {
-    edit () {
-      this.$router.push({ path: '/edit' })
-   },
-    chose () {
-    this.$router.push({ path: '/BatchAudit' })
-   },
-    check (url) {
-      this.$router.push({ path: '/detail', query: { url: url } })
-    }
+    })
   }
 }
 </script>
@@ -91,3 +78,6 @@ export default {
   color: #909191;
 }
 </style>
+
+
+

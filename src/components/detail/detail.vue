@@ -5,43 +5,43 @@
       <ul class="mess_list">
       <li>
          <span>直线主管：</span>
-         <i>SL-20120200349刘丽</i>
+         <i>{{info.lineManager}}</i>
       </li>
       <li>
          <span>RD区域总监：</span>
-         <i>RD-Alex.YANG</i>
+         <i>{{info.rd}}</i>
       </li>
       <li>
          <span>AM：</span>
-         <i>AM-Alex.YANG</i>
+         <i>{{info.am}}</i>
       </li>
       <li>
          <span>所在营运点：</span>
-         <i>TS Lilly Research</i>
+         <i>{{info.ou}}</i>
       </li>
       <li>
          <span>员工编码：</span>
-         <i>20111000679</i>
+         <i>{{info.code}}</i>
       </li>
       <li>
          <span>中文名：</span>
-         <i>夏鸣莹</i>
+         <i>{{info.name}}</i>
       </li>
       <li>
          <span>英文名：</span>
-         <i>20111000679</i>
+         <i>{{info.enName}}</i>
       </li>
       <li>
          <span>所在地：</span>
-         <i>SH</i>
+         <i>{{info.location}}</i>
       </li>
       <li>
          <span>细分市场/服务：</span>
-         <i>COR</i>
+         <i>{{info.segmentservice}}</i>
       </li>
       <li>
          <span>本岗时间：</span>
-         <i>2014/8/1</i>
+         <i>{{info.dateincurrentjob}}</i>
       </li>
       </ul>
      </div>
@@ -157,6 +157,7 @@ export default {
   data () {
     return {
       detail: {
+        info: {},
         place: '',
         language: '',
         potential: '',
@@ -168,11 +169,8 @@ export default {
     }
   },
   created () {
-    var _this = this
-    this.$http.get('/api'+this.$route.query.url).then((response) => {
-      console.log(JSON.stringify(response))
-      _this.detail = response.body.data[0]
-    })
+    console.log(JSON.stringify(this.$route.query.item))
+    this.info = this.$route.query.item
   }
 }
 </script>

@@ -12,12 +12,12 @@
         <img src="../assets/images/add.png" alt="" @click="edit()"></span>
         </div>
     <mt-index-list>
-      <mt-index-section v-for="value in talent" :index="value.name">
+      <mt-index-section v-for="value in list" :index="value">
         <div v-for="item in talent" @click="check(item.path)" class="weui_cells weui_cells_access weui_add">
           <a class="weui_cell" href="javascript:;">
              <div class="weui_cell_bd weui_cell_primary">
                 <p class="code_m">{{ item.code }}</p>
-                <p class="name_o"><span>{{ item.name }}</span><span>{{ item.English_name }}</span></p>
+                <p class="name_o"><span>{{ item.name }}</span><span>{{ item.enName }}</span></p>
              </div>
             <div class="weui_cell_ft">
             </div>
@@ -34,7 +34,7 @@ export default {
     return {
       informations: [],
       talent:[],
-      list: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+       list: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     }
   },
   created () {
@@ -70,7 +70,6 @@ export default {
               return 0
           }            
       } 
-
     }
   }
 }

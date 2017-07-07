@@ -2,7 +2,7 @@
   <div class="index_w">
     <div class="top_add">
       <div class="button_sp_area">
-        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary" @click="chose()">按钮</a>
+        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary btn_p" @click="chose()">选择</a>
       </div>
       <span class="img_add"><img src="../assets/images/add.png" alt="" @click="edit()"></span>
     </div>
@@ -106,5 +106,11 @@ export default {
 .name_o span{
   margin-right: 10px;
   color: #909191;
+}
+.button_sp_area {
+  text-align: right;
+}
+.weui_btn_primary {
+  background-color: blue;
 }
 </style>

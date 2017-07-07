@@ -1,21 +1,23 @@
 <template>
   <div class="index_w">
    <div class="top_w">
-      <input class="back" type=button value="<" onclick="window.history.go(-1)">批量审核
+   <input class="back" type=button value="<" onclick="window.history.go(-1)">一级审核
+     
+     <input type="submit" class="sub_c" @click="chose()" value="选择">
+     <!-- 
+     <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary btn_p" @click="chose()">选择</a> -->
+      
 
-      <input type="submit" class="sub_c" @click="alert()" value="提交">
-     </div>
-     <div class="chose_all">
-     <mt-button type="default" @click="selectAll()">全选</mt-button>
-     </div>
-
+   </div>
+     
+      <!-- span class="img_add"><img src="../assets/images/add.png" alt="" @click="edit()"></span> -->
+    
     <mt-index-list>
       <mt-index-section v-for="(value, key) in list" :index="key" v-if="value.length>0">
-        <div v-for="item in value" class="weui_cells weui_cells_access weui_add">
+        <div v-for="item in value" @click="check(item)" class="weui_cells weui_cells_access weui_add">
           <a class="weui_cell" href="javascript:;">
-            <p class="checkbox_RR"><input class="check_b"  style="width:25px;height:25px;margin-top:10px;background-color:#fff" name="Fruit" type="checkbox" value="" /></p>
-             <div class="weui_cell_bd weui_cell_primary" @click="check(item)">
-               <p class="code_m">{{ item.code }}</p>
+             <div class="weui_cell_bd weui_cell_primary">
+                <p class="code_m">{{ item.code }}</p>
                 <p class="name_o"><span>{{ item.name }}</span><span>{{ item.enName }}</span></p>
              </div>
             <div class="weui_cell_ft">
@@ -24,15 +26,10 @@
         </div>
       </mt-index-section>
     </mt-index-list>
-<div class="alert_w">
-  <p>提交成功</p>
-</div>
-
-</div>
+ </div>
 </template>
 
 <script>
-import { Toast } from 'mint-ui'
 export default {
   data () {
     return {
@@ -59,19 +56,11 @@ export default {
     edit () {
       this.$router.push({ path: '/edit' })
    },
-   selectAll () {
-       $(".check_b").attr("checked", true)
-       console.log($("#check_b").attr)
+    chose () {
+    this.$router.push({ path: '/BatchAudit' })
    },
-    alert () {
-       Toast({
-          message: '提交成功！',
-          position: 'center',
-          duration: 5000
-       })
-    },
     check (item) {
-      this.$router.push({ path: '/twoRemarks', query: { item: item } })
+      this.$router.push({ path: '/detail', query: { item: item } })
     },
     compare(prop){
 
@@ -91,6 +80,9 @@ export default {
 }
 </script>
 <style> 
+.index_w {
+  position: relative;
+}
 .top_w {
   position: relative;
   font-size: 19px;
@@ -112,10 +104,14 @@ export default {
 .back img {
   width: 100%;
 }
-
-
-.index_w {
-  position: relative;
+.sub_c {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  background-color: #f6f8fa;
+  color:#909191;
+  top:-1px;
+  right: -1px;
 }
 .top_add {
   width: 90%;
@@ -147,32 +143,20 @@ export default {
   margin-right: 10px;
   color: #909191;
 }
-
-.checkbox_RR {
-  width: 40px;
+.button_sp_area {
+  text-align: right;
 }
-
-.chose_all {
-  text-align: left;
-}
-.sub_c {
-  position: absolute;
-  display: inline-block;
-  width: 60px;
+.weui_btn_primary {
   background-color: #f6f8fa;
-  color:#909191;
-  top:-1px;
-  right: -1px;
 }
-.alert_w {
-  display: none;
+.weui_btn.weui_btn_mini {
+   font-size: 18px;
+   color: #909191;
+   font-weight: lighter !;
+}
+.btn_p {
   position: absolute;
-  width: 40%;
-  background-color: yellow;
-  padding: 30px 0px;
-  text-align: center;
-  left: 30%;
-  top:40%;
-
+  right: 5px;
+  top:8px;
 }
 </style>

@@ -1,11 +1,6 @@
 <template>
   <div class="index_w">
-    <div class="top_add">
-      <div class="button_sp_area">
-        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary btn_p" @click="chose()">选择</a>
-      </div>
-      <span class="img_add"><img src="../assets/images/add.png" alt="" @click="edit()"></span>
-    </div>
+    <div class="top_w"><input class="back" type=button value="<" onclick="window.history.go(-1)">一级审核</div>
     <mt-index-list>
       <mt-index-section v-for="(value, key) in list" :index="key" v-if="value.length>0">
         <div v-for="item in value" @click="check(item)" class="weui_cells weui_cells_access weui_add">
@@ -76,6 +71,27 @@ export default {
 <style> 
 .index_w {
   position: relative;
+}
+.top_w {
+  position: relative;
+  font-size: 19px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #26a2ff;
+  border-bottom: #ccc solid 1px;
+}
+.back {
+  position: absolute;
+  display: inline-block;
+  top:-1px;
+  left: 8px;
+  width: 28px;
+  background-color: white;
+  border-bottom: #ccc solid 1px;
+}
+.back img {
+  width: 100%;
 }
 .top_add {
   width: 90%;

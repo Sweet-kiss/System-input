@@ -68,7 +68,7 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea weUI_TT">{{detail.place}}</textarea>
+                <textarea class="weui_textarea weUI_TT" v-model="detail.place"></textarea>
            </div>
      </div>
 </div>
@@ -147,7 +147,7 @@
 </div>
 
   <div class="container">
-     <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
+     <a @click="save()" href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
   </div>
 </div>
 </template>
@@ -171,6 +171,14 @@ export default {
   created () {
     console.log(JSON.stringify(this.$route.query.item))
     this.info = this.$route.query.item
+  },
+  methods: {
+    save () {
+      console.log(this.detail.place)
+      this.$http.post('http://121.40.75.24:8010/api/sodexo/updateTalent', {id:this.infotalentid,whichlocations:this.detail.place}).then((response) => {
+        console.log(JSON.stringify(response))
+      }, (response) => {})
+    }
   }
 }
 </script>

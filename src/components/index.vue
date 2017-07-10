@@ -6,7 +6,7 @@
         <div v-for="item in value" @click="check(item)" class="weui_cells weui_cells_access weui_add">
           <a class="weui_cell" href="javascript:;">
              <div class="weui_cell_bd weui_cell_primary">
-                <p class="code_m">{{ item.code }}</p>
+                <p class="code_m">{{ item.code }}</p><span v-if="item.whichlocations && item.whichlocations != ''" class="edit_d">已编辑</span>
                 <p class="name_o"><span>{{ item.name }}</span><span>{{ item.enName }}</span></p>
              </div>
             <div class="weui_cell_ft">
@@ -128,5 +128,13 @@ export default {
 }
 .weui_btn_primary {
   background-color: blue;
+}
+.weui_cell_bd.weui_cell_primary {
+  position: relative;
+}
+.edit_d {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 </style>

@@ -171,12 +171,16 @@ export default {
   created () {
     console.log(JSON.stringify(this.$route.query.item))
     this.info = this.$route.query.item
+    this.detail.place = this.$route.query.item.whichlocations
   },
   methods: {
     save () {
       console.log(this.detail.place)
       this.$http.post('http://121.40.75.24:8010/api/sodexo/updateTalent', {id:this.info.talentid,whichlocations:this.detail.place}).then((response) => {
         console.log(JSON.stringify(response))
+        if (response.body) {
+          this.$router.back();
+        }
       }, (response) => {})
     }
   }

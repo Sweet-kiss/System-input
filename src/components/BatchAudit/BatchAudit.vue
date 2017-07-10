@@ -43,7 +43,7 @@ export default {
   },
   created () {
     let _this = this
-    this.$http.get('http://121.40.75.24:8010/api/sodexo/getTalent?type=1').then((response) => {
+    this.$http.get('http://121.40.75.24:8010/api/sodexo/getTalent?type=2').then((response) => {
       // console.log(JSON.stringify(response.body.talent))
       _this.talent = response.body.talent
       // console.log(response)

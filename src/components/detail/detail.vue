@@ -147,7 +147,7 @@
 </div>
 
   <div class="container">
-     <a @click="save()" href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
+     <a @click="save()" href="javascript:;" class="weui_btn weui_btn_primary" onclick="window.history.go(-1)">保存</a>
   </div>
 </div>
 </template>
@@ -175,7 +175,7 @@ export default {
   methods: {
     save () {
       console.log(this.detail.place)
-      this.$http.post('http://121.40.75.24:8010/api/sodexo/updateTalent', {id:this.infotalentid,whichlocations:this.detail.place}).then((response) => {
+      this.$http.post('http://121.40.75.24:8010/api/sodexo/updateTalent', {id:this.info.talentid,whichlocations:this.detail.place}).then((response) => {
         console.log(JSON.stringify(response))
       }, (response) => {})
     }

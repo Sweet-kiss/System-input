@@ -134,6 +134,8 @@ export default {
 }
 .edit_d {
   position: absolute;
+  font-size: 12px;
+  color: #26a2ff;
   top: 0;
   right: 0;
 }

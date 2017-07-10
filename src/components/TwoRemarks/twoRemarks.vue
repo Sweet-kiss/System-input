@@ -68,7 +68,7 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea weUI_TT">{{detail.place}}</textarea>
+                <textarea class="weui_textarea weUI_TT" v-model="detail.place"></textarea>
            </div>
      </div>
 </div>
@@ -151,13 +151,13 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea weUI_TT">{{detail.comments}}</textarea>
+                <textarea class="weui_textarea weUI_TT" v-model="detail.comment"></textarea>
            </div>
      </div>
 </div>
 
   <div class="container">
-     <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
+     <a href="javascript:;" @click="save()" class="weui_btn weui_btn_primary">保存</a>
   </div>
 </div>
 </template>
@@ -168,6 +168,7 @@ export default {
     return {
       detail: {
         info: {},
+        comment: '',
         place: '',
         language: '',
         potential: '',
@@ -181,6 +182,22 @@ export default {
   created () {
     console.log(JSON.stringify(this.$route.query.item))
     this.info = this.$route.query.item
+    this.detail.place = this.$route.query.item.whichlocations
+    this.detail.comment = this.$route.query.item.comments
+    console.log(this.detail.place)
+    console.log(this.detail.comment)
+  },
+   methods: {
+    save () {
+      console.log(this.detail.place)
+      this.$http.post('http://121.40.75.24:8010/api/sodexo/updateTalent', {batch: 'false',comments: {id:this.info.talentid,comment:this.detail.comment}}).then((response) => {
+        console.log(JSON.stringify(response))
+        console.log({id:this.info.talentid,comment:this.detail.comment})
+        if (response.body) {
+          this.$router.back();
+        }
+      }, (response) => {})
+    }
   }
 }
 </script>

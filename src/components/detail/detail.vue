@@ -147,7 +147,7 @@
 </div>
 
   <div class="container">
-     <a @click="save()" href="javascript:;" class="weui_btn weui_btn_primary" onclick="window.history.go(-1)">保存</a>
+     <a @click="save()" href="javascript:;" class="weui_btn weui_btn_primary" >保存</a>
   </div>
 </div>
 </template>

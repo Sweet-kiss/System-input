@@ -18,6 +18,8 @@
           <a class="weui_cell" href="javascript:;">
              <div class="weui_cell_bd weui_cell_primary">
                 <p class="code_m">{{ item.code }}</p>
+                </p><span v-if="item.whichlocations && item.whichlocations != ''" class="edit_d">已编辑</span>
+                </P>
                 <p class="name_o"><span>{{ item.name }}</span><span>{{ item.enName }}</span></p>
              </div>
             <div class="weui_cell_ft">
@@ -158,5 +160,15 @@ export default {
   position: absolute;
   right: 5px;
   top:8px;
+}
+.weui_cell_bd.weui_cell_primary {
+  position: relative;
+}
+.edit_d {
+  position: absolute;
+  font-size: 12px;
+  color: #26a2ff;
+  top: 0;
+  right: 0;
 }
 </style>

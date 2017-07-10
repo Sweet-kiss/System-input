@@ -82,7 +82,7 @@
 <mt-radio
   align="right"
   title="保留风险"
-  v-model="detail.Dekaron"
+  v-model="detail.risk"
   :options="['高', '低']">
 </mt-radio>
 
@@ -164,7 +164,7 @@ export default {
         Achievements: '',
         Desire: '',
         risk: '',
-        Dekaron: ''
+        Dekaron: '',
       }
     }
   },

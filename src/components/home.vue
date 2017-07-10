@@ -22,13 +22,14 @@ export default {
 </script>
 <style>
 .btn_cc {
-  margin-top: 60%;
+  margin-top: 200px;
 }
 .one_c {
   background-color: #26a2ff;
   color: white;
+  border-radius: 50px;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
   margin-bottom: 8px;
   font-size: 24px;
 }

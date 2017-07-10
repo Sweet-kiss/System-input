@@ -15,7 +15,7 @@ export default {
     this.$router.push({ path: '/index' })
    },
     twoAd () {
-    this.$router.push({ path: '/secondChonse' })
+    this.$router.push({ path: '/BatchAudit' })
    }
   }
 }

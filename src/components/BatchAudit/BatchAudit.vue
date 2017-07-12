@@ -13,9 +13,12 @@
       <mt-index-section v-for="(value, key) in list" :index="key" v-if="value.length>0">
         <div v-for="item in value" class="weui_cells weui_cells_access weui_add">
           <a class="weui_cell" href="javascript:;">
-            <p class="checkbox_RR"><input class="check_b"  style="width:25px;height:25px;margin-top:10px;background-color:#fff" name="Fruit" type="checkbox" v-model="selecteds" :value="item.talentid" /></p>
+            <p class="checkbox_RR">
+              <input v-if="item.status == '3'" class="check_b" style="width:25px;height:25px;margin-top:10px;background-color:#fff" name="Fruit" type="checkbox" disabled="disabled" checked="checked" />
+              <input v-else class="check_b" style="width:25px;height:25px;margin-top:10px;background-color:#fff" name="Fruit" type="checkbox" v-model="selecteds" :value="item.talentid" />
+            </p>
              <div class="weui_cell_bd weui_cell_primary" @click="check(item)">
-               <p class="code_m">{{ item.code }}</p><span v-if="item.comments && item.comments != ''" class="edit_d">已审核</span>
+               <p class="code_m">{{ item.code }}</p><span v-if="item.status == '3'" class="edit_d">已审核</span>
                 <p class="name_o"><span>{{ item.name }}</span><span>{{ item.enName }}</span></p>
              </div>
             <div class="weui_cell_ft">

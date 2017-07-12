@@ -151,7 +151,8 @@
 <div class="weui_cells weui_cells_form">
       <div class="weui_cell">
            <div class="weui_cell_bd weui_cell_primary">
-                <textarea class="weui_textarea weUI_TT" v-model="detail.comment"></textarea>
+                <textarea v-if="info.status == '3'" disabled="disabled" class="weui_textarea weUI_TT" v-model="detail.comment"></textarea>
+                <textarea v-else class="weui_textarea weUI_TT" v-model="detail.comment"></textarea>
            </div>
      </div>
 </div>

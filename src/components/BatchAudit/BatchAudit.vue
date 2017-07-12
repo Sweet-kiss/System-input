@@ -15,7 +15,7 @@
           <a class="weui_cell" href="javascript:;">
             <p class="checkbox_RR"><input class="check_b"  style="width:25px;height:25px;margin-top:10px;background-color:#fff" name="Fruit" type="checkbox" v-model="selecteds" :value="item.talentid" /></p>
              <div class="weui_cell_bd weui_cell_primary" @click="check(item)">
-               <p class="code_m">{{ item.code }}</p>
+               <p class="code_m">{{ item.code }}</p><span v-if="item.comments && item.comments != ''" class="edit_d">已审核</span>
                 <p class="name_o"><span>{{ item.name }}</span><span>{{ item.enName }}</span></p>
              </div>
             <div class="weui_cell_ft">
@@ -55,8 +55,8 @@ export default {
         _this.list[_this.talent[i].enName.substring(0, 1).toUpperCase()].push(_this.talent[i])
         _this.ids.push(_this.talent[i].talentid)
       }
-      console.log(JSON.stringify(_this.list))
-    })
+    //   console.log(JSON.stringify(_this.list))
+     })
   },
   methods: {
     edit () {
@@ -68,12 +68,16 @@ export default {
        // console.log($("#check_b").attr)
    },
     alert () {
+
       let result = []
       for (let i=0; i<this.selecteds.length; i++) {
         let tmp = {id: this.selecteds[i]}
         result.push(tmp)
       }
       this.$http.post('http://121.40.75.24:8010/api/sodexo/updateTalent', {batch: 'true',comments: result}).then((response) => {
+          console.log(JSON.stringify(response.body))
+     
+
         if (response.body) {
           Toast({
             message: '提交成功！',
@@ -187,6 +191,15 @@ export default {
   text-align: center;
   left: 30%;
   top:40%;
-
+}
+.weui_cell_bd.weui_cell_primary {
+  position: relative;
+}
+.edit_d {
+  position: absolute;
+  font-size: 12px;
+  color: #26a2ff;
+  top: 0;
+  right: 0;
 }
 </style>
